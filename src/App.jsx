@@ -3,7 +3,6 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './App.css'
-import './App2.css'
 import firebaseConfig from "./config/firebaseConfig";
 import SignInComp from "./components/SignInComp";
 import ChatRoom from "./components/ChatRoom";
