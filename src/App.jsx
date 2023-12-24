@@ -2,11 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 import './App.css'
 import './App2.css'
-import SignOutComp from "./components/SignOutComp";
 import SignInComp from "./components/SignInComp";
+import ChatRoom from "./components/ChatRoom";
 import { useEffect } from "react";
 
 const firebaseConfig = {
@@ -22,7 +21,6 @@ const auth = getAuth(app);
 const firestore = getFirestore(app);
 
 function App() {
-
   const [user] = useAuthState(auth);
   useEffect(() => {
     console.log(user);
@@ -34,7 +32,9 @@ function App() {
       </header>
       <section>
         {user ? (
-          <SignOutComp auth={auth} />
+          <ChatRoom auth={auth}
+            firestore={firestore}
+          />
         ) : (
           <SignInComp auth={auth} />
         )}
