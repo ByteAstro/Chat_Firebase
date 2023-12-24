@@ -4,18 +4,11 @@ import { getFirestore } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './App.css'
 import './App2.css'
+import firebaseConfig from "./config/firebaseConfig";
 import SignInComp from "./components/SignInComp";
 import ChatRoom from "./components/ChatRoom";
 import { useEffect } from "react";
 
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_apiKey,
-  authDomain: import.meta.env.VITE_authDomain,
-  projectId: import.meta.env.VITE_projectId,
-  storageBucket: import.meta.env.VITE_storageBucket,
-  messagingSenderId: import.meta.env.VITE_messagingSenderId,
-  appId: import.meta.env.VITE_appId
-};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
