@@ -1,4 +1,5 @@
 # React+Firebase ~ Chat-WebApp
 
-- Configure Given .env file
-- Then run np run dev
+- Go to \src\config\firebaseConfig.js
+- Edit the firebase configurations
+- Then run npm run dev
